@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation form</title>
+</head>
+<body>
+    <div>
+        <form action="javascript:void(0)">
+       <label for="">Name</label>
+       <input type="text" name=""  class="name">
+     <div id="nameErr"></div>
+       <label for="">Email</label>
+       <input type="text" name="" id="" class="email">
+       <div id="emailErr"></div>
+
+
+       <label for="">password</label>
+       <input type="text" name="" id="" class="form-control">
+       <button type="submit" onclick="validate()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validate(){
+            let name=document.getElementsByClassName('name')[0].value;
+            if(name==''
+            ){
+                document.getElementById('nameErr').innerHTML="Name is required";
+                document.getElementById('nameErr').style.color="red";
+        }
+        if(name.length<=6){
+       document.getElementById('nameErr').innerHTML="name must be greater than 6 digit";
+       document.getElementById('nameErr').style.color="red";
+        }
+        if(name){
+            document.getElementById('nameErr').style.display='none';
+        }
+        
+    
+    
+    let email=document.getElementsByClassName('email')[0].value;
+    console.log(email);
+    if(email!=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.email){
+        document.getElementById('emailErr').innerHTML="invalid email";
+    }
+    }
+
+
+
+
+    var a=100;
+    var b=20;
+    (a>b)?console.log('a'):console.log('b');
+    </script>
+</body>
+</html>
